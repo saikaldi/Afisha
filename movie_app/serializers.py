@@ -1,10 +1,16 @@
 from rest_framework import serializers
 from .models import Director, Movie, Review
 from django.db.models import Avg
+
 class DirectorSerializer(serializers.ModelSerializer):
+    movies_count = serializers.SerializerMethodField()
+
     class Meta:
         model = Director
-        fields = 'name count_movies'.split()
+        fields = 'name movies_count'.split()
+
+    def get_movies_count(self, obj):
+        return obj.movies.count()
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:

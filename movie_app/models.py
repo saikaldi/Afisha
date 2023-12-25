@@ -7,8 +7,8 @@ class Director(models.Model):
     def __str__(self):
         return self.name
 
-    def count_movies(self):
-        return self.movies.count()
+    # def count_movies(self):
+    #     return self.movies.count()
 
 
 
