@@ -16,7 +16,7 @@ class Director(models.Model):
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    duration = models.DurationField()
+    duration = models.IntegerField()
     director = models.ForeignKey(Director, on_delete=models.CASCADE, related_name='movies')
 
     def __str__(self):
