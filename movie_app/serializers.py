@@ -24,7 +24,8 @@ class MovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ['title', 'reviews', 'average_rating']
+        fields = '__all__'
+        # fields = ['title', 'reviews', 'average_rating']
 
     def get_average_rating(self, obj):
         # Calculate and return the average rating for the movie

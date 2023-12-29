@@ -7,9 +7,9 @@ urlpatterns = [
     path('movies/', views.movie_list_view),
     path('movies/<int:id>/', views.movie_detail_api_view),
 
-    path('movies/reviews/', views.movie_list_with_avg_rating),
+    path('movies/reviews/', views.review_list_view),
     path('movies/reviews/<int:id>/', views.review_detail_api_view),
 
 
 ]
-# review_list_view
+# review_list_view,movie_list_with_avg_rating
