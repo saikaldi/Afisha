@@ -86,6 +86,7 @@ def movie_list_view(request):
         # Step 3. Return serialized movies
         return Response(data=serializer.data)
     elif request.method == 'POST':
+        print(request.user)
         serializer = MovieValidateSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(status=status.HTTP_400_BAD_REQUEST, data={'errors': serializer.errors})
@@ -128,6 +129,7 @@ def review_list_view(request):
         # Step 3. Return serialized movies
         return Response(data=serializer.data)
     elif request.method == 'POST':
+
         serializer = ReviewValidateSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(status=status.HTTP_400_BAD_REQUEST, data={'errors': serializer.errors})
