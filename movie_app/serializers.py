@@ -8,7 +8,7 @@ class DirectorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Director
-        fields = 'name movies_count'.split()
+        fields = 'id name movies_count'.split()
 
     def get_movies_count(self, obj):
         return obj.movies.count()
